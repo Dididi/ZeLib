@@ -34,9 +34,21 @@ $(document).ready(function(){
 </script>
 
 
+//Add page to a div
+<script>
+var auto_refresh = setInterval(function(){
+  $('#IdDiv').load('article.html #target');
+},1000); //every seconds
+</script>
+
+
 //Get Data from an another file
 <script>
 var auto_refresh = setInterval(function(){
   $.get('data.htm,function(data){ ('#main').html(data) });
 },1000); //every seconds
 </script>
+
+JQuery doc :
+.html() : http://api.jquery.com/html/
+.load() : http://api.jquery.com/load/
