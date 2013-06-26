@@ -6,7 +6,7 @@
 //Div refreshing #1
 <script>
 var auto_refresh = setInterval(function(){
- $('#IdDiv').fadeOut('fast').load('reload.php').fadeIn('fast');
+  $('#IdDiv').fadeOut('fast').load('reload.php').fadeIn('fast');
 },1000); //every seconds
 </script>
 ////reload.php
@@ -14,16 +14,29 @@ var auto_refresh = setInterval(function(){
 
 //Div refreshing #2
 <script>
+var counter = 0;
 var auto_refresh = setInterval(function(){
- $('#IdDiv').fadeOut('fast').load('reload.php').fadeIn('fast');
+  counter = counter + 1;
+  x = "toto";
+  document.getElementById("#IdDiv").innerHTML = "Testing: " + counter + x;
 },1000); //every seconds
 </script>
-////reload.php
-<?php $toto="dada"; echo $toto; ?>
+
+//Div refreshing #3
+<script>
+$(document).ready(function(){
+  $("IdDiv").load("reload.php");
+  var auto_refresh = setInterval(function(){
+    $("#IdDiv").load('reload.php?randval=' + Math.random());
+  },1000); //every seconds
+  $.ajaxSetup({ cache: false });
+});
+</script>
+
 
 //Get Data from an another file
 <script>
 var auto_refresh = setInterval(function(){
- $.get('data.htm,function(data){ ('#main').html(data) });
+  $.get('data.htm,function(data){ ('#main').html(data) });
 },1000); //every seconds
 </script>
