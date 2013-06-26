@@ -1,0 +1,29 @@
+//Page refreshing
+<head> 
+<META HTTP-EQUIV="Refresh" CONTENT="30; URL=http://www.tonSite.com/page.html"> 
+</head> 
+
+//Div refreshing #1
+<script>
+var auto_refresh = setInterval(function(){
+ $('#IdDiv').fadeOut('fast').load('reload.php').fadeIn('fast');
+},1000); //every seconds
+</script>
+////reload.php
+<?php $toto="dada"; echo $toto; ?>
+
+//Div refreshing #2
+<script>
+var auto_refresh = setInterval(function(){
+ $('#IdDiv').fadeOut('fast').load('reload.php').fadeIn('fast');
+},1000); //every seconds
+</script>
+////reload.php
+<?php $toto="dada"; echo $toto; ?>
+
+//Get Data from an another file
+<script>
+var auto_refresh = setInterval(function(){
+ $.get('data.htm,function(data){ ('#main').html(data) });
+},1000); //every seconds
+</script>
