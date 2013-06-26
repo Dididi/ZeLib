@@ -45,7 +45,7 @@ var auto_refresh = setInterval(function(){
 //Get Data from an another file
 <script>
 var auto_refresh = setInterval(function(){
-  $.get('data.htm,function(data){ ('#main').html(data) });
+  $.get('data.htm',function(data){ $('#main').html(data); });
 },1000); //every seconds
 </script>
 
