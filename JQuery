@@ -55,6 +55,14 @@ var auto_refresh = setInterval(function(){
 },50); //every 50ms
 </script>
 
+//Recuperer div d'un fichier
+$.get('fichier.htm',function(val){
+  console.log(val);                     //console de test de donnees
+  var tmp = $("<div>").html(val);       //laissser <div> tel quel
+  var val_toto = tmp.find('#toto');     //toto est id du div du fichier
+  $('#IdDivPrincipal').text(val_toto.text());
+});
+
 
 if("[[0]]" == "ON"){
 alert("ON");
